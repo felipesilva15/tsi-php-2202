@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Alunos</title>
+    <title>Document</title>
 </head>
 <body>
-    <div action="index.php" method="post">
-        <table>
+    <table>
+        <?php
+
+        while ( $saída = $stmt->fetch(PDO::FETCH_ASSOC)){
             <tr>
-                <th>Nome</th>
-                <th>Nome</th>
-                <th>Nome</th>
+                var_dump($saída);
             </tr>
-            <tr>
-                <td>Nome</td>
-                <td>Nome</td>
-                <td>Nome</td>
-            </tr>
-        </table>
-    </div>
+        }
+        ?>
+    </table>
+    
 </body>
 </html>
