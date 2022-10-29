@@ -30,9 +30,8 @@ $stmt->bindParam(":TURNO", $turno);
 $stmt->bindParam(":INICIO", $inicio);
 
 /* Executa a query no SGBD */
-$stmt->execute();
 
-if($db->lastInsertId() != 0){
+if($stmt->execute()){
     echo "Registro de ID {$db->lastInsertId()} inserido na base de dados";
 } else{
     echo "Erro ao inserir aluno na base de dados";

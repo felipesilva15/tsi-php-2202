@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <table border=1>
-    <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Turno</th>
-        <th>Dt. Inicio</th>
-    </tr>
-    <?php
+<?php
 
-        require_once("../conecta/conecta.php");
+//Buscamos o código que conecta no SGBD
+require_once '..//bancoDeDados/conecta.php';
 
-        $stmt = $db->query("SELECT ID, NOME, TURNO, INICIO FROM ALUNOS");
+//
+$stmt = $bd->query('SELECT id, nome, turno, inicio FROM alunos');
 
-        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>
-                <td>{$data['ID']}</td>
-                <td>{$data['NOME']}</td>
-                <td>{$data['TURNO']}</td>
-                <td>{$data['INICIO']}</td>
+
+    echo '<table border="1">
+            <tr>
+               <td>ID</td>
+               <td>Nome</td>
+               <td>Turno</td>
+               <td>Inicio</td>
+               <td>Ações</td>
+            </tr>';
+
+//FETCH_ASSOC serve para trazer somente os índices alfa-numericos do Vetor
+while( $registro = $stmt->fetch(PDO :: FETCH_ASSOC) ){
+    
+    echo " <tr>
+                <td>{$registro['id']}</td>
+                <td>{$registro['nome']}</td>
+                <td>{$registro['turno']}</td>
+                <td>{$registro['inicio']}</td>
             </tr>";
-        }
-    ?>
-    </table>
-</body>
-</html>
+
+}
+echo '</table>';
