@@ -9,20 +9,21 @@
 </head>
 <body>
     <div class='container'>
-        <form action="gravar.php" method="post">
+        <form action="atualizar.php" method="post">
             <label for="nome">Nome: </label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" value="<?php echo $aluno["nome"] ?>">
             <br><br>
             <label for="turno">Turno: </label>
             <select name="turno" id="turno">
-                <option value="">Escolha</option>
-                <option value="matutino">Matutino</option>
-                <option value="vespertino">Vespertino</option>
-                <option value="noturno">Noturno</option>
+                <option <?php echo $aluno["turno"] == "" ? "selected" : "" ?> value="">Escolha</option>
+                <option <?php echo $aluno["turno"] == "matutino" ? "selected" : "" ?> value="matutino">Matutino</option>
+                <option <?php echo $aluno["turno"] == "vespertino" ? "selected" : "" ?> value="vespertino">Vespertino</option>
+                <option <?php echo $aluno["turno"] == "noturno" ? "selected" : "" ?> value="noturno">Noturno</option>
             </select>
             <br><br>
             <label for="inicio">Início</label>
-            <input type="date" name="inicio" id="inicio">
+            <input type="date" name="inicio" id="inicio" value="<?php echo $aluno["inicio"] ?>">
+            <input type="hidden" name="id" id="id" value="<?php echo $aluno["id"] ?>">
             <br><br>
             <input class="btn" type="submit" value="Gravar">
         </form> 
