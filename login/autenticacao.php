@@ -1,6 +1,6 @@
 <?php
 //Buscamos o código que conecta no SGBD
-require_once '../bancoDeDados/conecta.php';
+require_once '../conecta/conecta.php';
 
 $email = trim($_POST['usuario']);//trim() tira espaços do começo e do final
 $senha = trim($_POST['senha']);
