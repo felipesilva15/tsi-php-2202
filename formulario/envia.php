@@ -8,23 +8,19 @@
 </head>
 <body>
     <form action="recebe.php" method="post">
-        <label for="">Nome</label>
-        <input type="text" name="nomeUsuario" id="nome">
-        <br>
-        <label for="">Idade</label>
-        <input type="number" name="idadeUsuario" id="idade">
-        <br>
-        <label for="">CPF</label>
-        <input type="number" name="cpfUsuario" id="cpf">
-        <br>
-        <label for="">Período</label>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nomeUsuario" id="nome"><br>
+        <label for="idade">Idade:</label>
+        <input type="number" name="idadeUsuario" id="idade"><br>
+        <label for="cpf">CPF:</label>
+        <input type="number" name="cpfUsuario" id="cpf"><br>
+        <label for="periodo">Período:</label>
         <select name="periodoUsuario" id="periodo">
-            <option value="Escolha">Escolha</option>
-            <option value="Diurno">Diurno</option>
-            <option value="Vespertino">Vespertino</option>
-            <option value="Noturno">Noturno</option>
-        </select>
-        <br>
+            <option value="">Escolha</option>
+            <option value="matutino">Matutino</option>
+            <option value="vespertino">Vespertino</option>
+            <option value="noturno">Nortuno</option>
+        </select><br>
         <input type="submit" value="Enviar">
     </form>
 </body>
