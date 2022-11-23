@@ -1,6 +1,8 @@
 <?php
+//Controle de acesso/sessão
+require_once '../controleDeSessao/controle.php';
 //Buscamos o código que conecta no SGBD
-require_once '../conecta/conecta.php';
+require_once '../bancoDeDados/conecta.php';
 //Na linha 3 estamos trazendo todo o código de
 //../bancoDeDados/conecta.php para este código 
 //include_once(); não gera erro fatal se não existir o arquivo

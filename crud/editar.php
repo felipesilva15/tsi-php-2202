@@ -1,6 +1,8 @@
 <?php
+//Controle de acesso/sessão
+require_once '../controleDeSessao/controle.php';
 //Buscamos o código que conecta no SGBD
-require_once '../conecta/conecta.php';
+require_once '../bancoDeDados/conecta.php';
 
 //Apenas para ficar mais fácil de trabalhar
 //com o dado enviado pelo usuário 
@@ -20,15 +22,12 @@ $stmt->execute();
 
 $aluno = $stmt->fetch(PDO::FETCH_ASSOC);
 
-require_once('formEditar.php');
-
-//FAZER EM CASA
-
-//mostrar um formulário HTML para o usuário 
-//com os dados do aluno selecionado para
-//ser editado
+//Mostra o formulário para o usuário 
+//poder editar os dados do aluno
+require_once 'formEditar.php';
 
 //Ao clicar "gravar" no formulário fazer
 //o update no banco e voltar para a 
 //index com uma mensagem de erro ou
 //sucesso
+

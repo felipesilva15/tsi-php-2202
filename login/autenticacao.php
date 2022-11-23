@@ -1,6 +1,6 @@
 <?php
 //Buscamos o código que conecta no SGBD
-require_once '../conecta/conecta.php';
+require_once '../bancoDeDados/conecta.php';
 
 $email = trim($_POST['usuario']);//trim() tira espaços do começo e do final
 $senha = trim($_POST['senha']);
@@ -20,8 +20,17 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $autenticou = false;
 
-if( isset($usuario['nome']) ){
+if( isset($usuario['nome']) ){//Se existir o usuário 
 
+    //Comparar a senha para ver se está correta
+    if( password_verify( $senha, $usuario['senha']) ){
+
+        //Sessão inicializada
+        session_start();
+        $_SESSION['id'] = $email;
+        //Direciona para o menu princial
+        header('Location: /tsi-php-2202/menu');
+    }
 }
 
 include 'index.php';
