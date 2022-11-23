@@ -1,101 +1,51 @@
 <?php
 
-$diaSemana = [
-    0=>"Domingo",
-    1=>"Segunda",
-    2=>"Terça-feira",
-    3=>"Quarta-feira",
-    4=>"Quinta-feira",
-    5=>"Sexta-feira",
-    6=>"Sábado"
-];
+//Vetores
 
-// var_dump($diaSemana);
+$diaSemana = [  0 => 'Domingo', 1 => 'Segunda', 2 => 'Terça', 
+                3 => 'Quarta', 4 => 'Quinta', 5 => 'Sexta', 
+                6 => 'Sábado'];
 
-$hoje = date("w");
-$date = date("d/m/Y");
+//Muito importante para depuração do código - var_dump()
+//var_dump($diaSemana);
 
-// echo "Hoje é dia $date - {$diaSemana[$hoje]}";
+$hoje = date('w');
 
-echo "<br><br>";
+echo "Hoje é {$diaSemana[$hoje]}<br><br>"; //interpolação com vetor precisa das {}
 
-$alunos = [
-    [
-        "matricula"=>16545,
-        "nome"=>"Bono",
-        "semestre"=>2,
-        "anoInicio"=>2022
-    ],
-    [
-        "matricula"=>25485,
-        "nome"=>"Mario",
-        "semestre"=>3,
-        "anoInicio"=>2021
-    ],
-    [
-        "matricula"=>45625,
-        "nome"=>"Jonas",
-        "semestre"=>1,
-        "anoInicio"=>2022
-    ]
-];
+$aluno = [  0 => [  'matricula' => 634545, 
+                    'nome' => 'João',
+                    'semestre' => 2],
+            1 => [  'matricula' => 8548, 
+                    'nome' => 'Paulo',
+                    'semestre' => 3],
+            2 => [  'matricula' => 65422, 
+                    'nome' => 'Maria',
+                    'semestre' => 1]];
 
-// var_dump($alunos);
+echo '<table border = "1">
+        <tr>
+            <td>Matrícula</td>
+            <td>Nome</td>
+            <td>Semestre</td>
+        </tr>';
 
-// echo "<br><br>";
+for( $i = 0 ; $i < count($aluno) ; $i++ ){
 
-// // Monta array de cabeçalho
-// $cabecalho = [];
-
-// foreach ($alunos[0] as $key => $value) {
-//     array_push($cabecalho, $key);
-// }
-
-// // Cria tag da tabela
-// $html = "<table border = 1>";
-
-// // Cria o cabeçalho
-// $html .= "<tr>" ;
-
-// for ($i=0; $i < count($cabecalho); $i++){
-//     $html .= "<th>".ucwords($cabecalho[$i])."</th>";
-// }
-
-// $html .= "</tr>" ;
-
-// // Cria as linhas dos dados
-// for ($i=0; $i < count($alunos); $i++){
-//     $aluno = $alunos[$i];
-
-//     $html .= "<tr>";
-
-//     for ($a=0; $a < count($aluno); $a++){
-//         $html .= "<td>{$aluno[$cabecalho[$a]]}</td>";
-//     }
-
-//     $html .= "</tr>";
-// }
-
-// $html .= "</table>";
-
-$html = "<table>";
-
-$html .= "<tr>" ;
-$html .= "<td>Matricula</td>";
-$html .= "<td>Nome</td>";
-$html .= "<td>Semestre</td>";
-$html .= "</tr>" ;
-
-foreach ($alunos as $aluno) {
-    $html .= "<tr>";
-
-    $html .= "<td>{$aluno["matricula"]}</td>";
-    $html .= "<td>{$aluno["nome"]}</td>";
-    $html .= "<td>{$aluno["semestre"]}</td>";
-
-    $html .= "</tr>";
+    echo "  <tr>
+                <td> {$aluno[$i]['matricula']} </td>
+                <td> {$aluno[$i]['nome']} </td>
+                <td> {$aluno[$i]['semestre']} </td>
+            </tr>";
 }
 
-$html .= "</table>";
+foreach( $aluno as $ind => $val ){
 
-echo $html;
+        echo "  <tr>
+                        <td>{$val['matricula']}</td>
+                        <td>{$val['nome']}</td>
+                        <td>{$val['semestre']}</td>
+                </tr>";
+}
+
+echo '</table>';

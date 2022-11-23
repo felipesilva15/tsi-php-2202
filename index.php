@@ -1,82 +1,90 @@
 <?php
+$nome = 'Prof. Bono'; //variável
 
-$nome = "Felipe Silva";
+echo "Olá $nome <br>";
 
-// echo "Olá $nome!";
+//Comentário de linha
 
-// Comentário de linha 
+#Comentário de linha
 
-# Comentário de linha 
-
-/* 
-    Comentário 
-    de
-    bloco
+/*
+Comentário 
+de
+bloco
 */
 
-// Documentação do PHP fica em: https://www.php.net
+//DOCUMENTAÇÃO DO PHP FICA EM: https://www.php.net
 
-// FOR
-echo "<b>For</b><br>";
-for ($i=0; $i < 10; $i++) { 
-    echo "$nome<br>";
+/////////////////////////////////
+//LOOPINGS 
+
+//FOR
+for( $i = 0 ; $i < 10 ; $i++ ){
+
+    echo "Número da linha $i <br>";
 }
 
-// WHILE
-echo "<br><b>While</b><br>";
+//WHILE
 $i = 0;
+while($i < 10){
 
-while ($i < 10){
-    echo "$nome<br>";
-    
+    echo "Número da linha $i <br>";
     $i++;
 }
 
-// DO WHILE
-echo "<br><b>Do while</b><br>";
+//DO WHILE
 $i = 0;
-
-do {
-    echo "$nome<br>";
-    
+do{
+    echo "Número da linha $i <br>";
     $i++;
-} while ($i < 10);
+}while( $i < 10 );
 
-// IF
-echo "<br><b>If</b><br>";
-if (5 > 10){
-    echo "5 é maior que 10";
+//FIM LOOPINGS 
+
+///////////////////////////////////////
+//CONDICIONAIS
+
+//IF
+if( 5 > 10){
+
+    echo "Cinco é maior que dez";
+
 }else{
-    echo "5 não é maior que 10";
+
+    echo "Cinco não é maior que dez";
 }
 
-//SWITCH
-echo "<br><br><b>Switch case</b><br>";
-$dow = 3;
-switch ($dow) {
+echo "<br>";
+
+$diaSemana = 1;
+
+switch($diaSemana){
+
     case 0:
         echo "Domingo";
+        //comando 2;
+        //comando 3;
         break;
     case 1:
-        echo "Segunda-feira";
+        echo "Segunda";
         break;
     case 2:
-        echo "Terça-feira";
+        echo "Terça";
         break;
     case 3:
-        echo "Quarta-feira";
+        echo "Quarta";
         break;
     case 4:
-        echo "Quinta-feira";
+        echo "Quinta";
         break;
-
     case 5:
-        echo "Sexta-feira";
+        echo "Sexta";
         break;
     case 6:
         echo "Sábado";
         break;
     default:
-        echo "Número inválido";
-        break;
+        echo "Número inválido!";
 }
+
+//FIM CONDICIONAIS
