@@ -25,7 +25,7 @@
             <input type="date" name="inicio" id="inicio">
             <br><br>
             <input class="btn" type="submit" value="Gravar">
-        </form>    
-    </div>
+        </form> 
+    </div>   
 </body>
 </html>

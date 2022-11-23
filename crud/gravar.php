@@ -39,4 +39,4 @@ if( $consulta->execute() ){
 //Finalmente executamos a consulta
 //no SGBD
 
-include 'index.php';    
+include 'index.php';

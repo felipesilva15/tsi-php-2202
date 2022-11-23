@@ -68,7 +68,7 @@
                                 <td>{$aluno['inicio']}</td>
                                 <td>
                                     <button 
-                                        class='btn btn-info ' 
+                                        class='btn btn-info' 
                                         formaction='editar.php'
                                         value='{$aluno['id']}'
                                         name='id'>
