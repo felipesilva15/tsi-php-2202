@@ -1,5 +1,5 @@
 <?php
-require_once '../conecta/conecta.php';
+require_once '../bancoDeDados/conecta.php';
 
 $stmt = $bd->query('SELECT id, nome, turno, inicio FROM alunos');  
 

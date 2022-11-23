@@ -13,7 +13,6 @@
         <a href="formIncluir.php"><button class='btn'>Novo Aluno</button></a>
 
         <?php
-
         //Mensagem de sucesso ou falha na hora 
         //de atualizar o aluno
         if( isset($atualizou) ){
@@ -21,7 +20,7 @@
             if( !$atualizou ){
 
                 echo '  <div class="alert alert-danger" role="alert">
-                            Erro ao tentar atualizar o aluno!
+                            Aluno não atualizado!
                         </div>';
             }else{
 
@@ -78,9 +77,6 @@
 
                 <?php
                 foreach($alunos as $aluno){
-
-                    $aluno["turno"] = ucwords($aluno["turno"]);
-                    $aluno["inicio"] = date("d/m/Y", strtotime($aluno["inicio"]));
 
                     echo "  <tr>
                                 <td>{$aluno['id']}</td>

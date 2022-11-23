@@ -1,6 +1,6 @@
 <?php
 //Buscamos o código que conecta no SGBD
-require_once '../conecta/conecta.php';
+require_once '../bancoDeDados/conecta.php';
 //Apenas para ficar mais fácil de trabalhar
 //com o dado enviado pelo usuário 
 $id = $_POST['id'] ?? 0;
